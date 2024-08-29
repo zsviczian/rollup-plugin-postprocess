@@ -1,3 +1,9 @@
+I got tired of `npm install brettz9/rollup-plugin-postprocess#update --save-dev` and created my own identical fork with @brettz9's fix
+
+More info here: https://github.com/developit/rollup-plugin-postprocess/issues/10
+
+---
+
 # rollup-plugin-postprocess [![npm](https://img.shields.io/npm/v/rollup-plugin-postprocess.svg?style=flat)](https://www.npmjs.org/package/rollup-plugin-postprocess) [![travis](https://travis-ci.org/developit/rollup-plugin-postprocess.svg?branch=master)](https://travis-ci.org/developit/rollup-plugin-postprocess)
 
 Apply regex find-and-replace postprocessing to your Rollup bundle.

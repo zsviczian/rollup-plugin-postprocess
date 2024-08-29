@@ -1,13 +1,14 @@
 {
-  "name": "rollup-plugin-postprocess",
-  "version": "1.0.2",
+  "name": "@zsviczian/rollup-plugin-postprocess",
+  "version": "1.0.3",
   "description": "Find-and-replace postprocessing for Rollup output.",
   "main": "dist/rollup-plugin-postprocess.js",
   "module": "dist/rollup-plugin-postprocess.m.js",
   "source": "postprocess.js",
   "scripts": {
+    "lint": "eslint .",
     "prepare": "microbundle --external all --target node --format cjs,es --no-compress",
-    "test": "eslint postprocess.js && npm run -s prepare && node test",
+    "test": "npm run lint && npm run -s prepare && nyc node test",
     "release": "npm run -s prepare && npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "eslintConfig": {
@@ -27,15 +28,21 @@
     "index.js",
     "dist"
   ],
-  "repository": "developit/rollup-plugin-postprocess",
+  "repository": "https://github.com/developit/rollup-plugin-postprocess",
+  "homepage": "https://github.com/developit/rollup-plugin-postprocess",
+  "bugs": "https://github.com/developit/rollup-plugin-postprocess/issues",
   "author": "Jason Miller <jason@developit.ca> (http://jasonformat.com)",
+  "contributors": [
+    "Brett Zamir"
+  ],
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^4.13.1",
-    "eslint-config-developit": "^1.1.1",
-    "microbundle": "^0.4.1"
+    "eslint": "^7.7.0",
+    "eslint-config-developit": "^1.2.0",
+    "microbundle": "^0.12.3",
+    "nyc": "^15.1.0"
   },
   "dependencies": {
-    "magic-string": "^0.22.4"
+    "magic-string": "^0.25.7"
   }
 }

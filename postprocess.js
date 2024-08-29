@@ -6,7 +6,7 @@ const replacer = (str, index) => currentToken[index];
 export default function postprocess(allReplacements) {
 	return {
 		name: 'postprocess',
-		transformBundle(code, { sourceMap, format }) {
+		renderChunk(code, { sourceMap, format }) {
 			let str = new MagicString(code);
 			let replacements = typeof allReplacements==='function' ? allReplacements({ code, sourceMap, format }) : allReplacements;
 
